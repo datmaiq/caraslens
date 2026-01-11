@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { images } from '../assets/images';
 import ResultCover from './ResultCover';
 
@@ -136,6 +136,19 @@ const Quiz = () => {
     email: '',
     answers: [null, null, null, null, null],
   });
+
+  // Preload next question images
+  useEffect(() => {
+    if (currentStep >= 1 && currentStep < 5) {
+      const nextQuestion = questions[currentStep]; // currentStep is 1-indexed, so this gets next question
+      if (nextQuestion) {
+        const imgA = new Image();
+        const imgB = new Image();
+        imgA.src = nextQuestion.optionA.image;
+        imgB.src = nextQuestion.optionB.image;
+      }
+    }
+  }, [currentStep]);
 
   // Calculate result code from answers (e.g., "ABAAB")
   const getResultCode = (): string => {
@@ -346,6 +359,7 @@ const Quiz = () => {
             <div className="relative w-[280px] md:w-[380px] lg:w-[476px] h-[280px] md:h-[420px] lg:h-[700px] overflow-hidden rounded-2xl lg:rounded-3xl border-[3px] lg:border-[5px] border-[#E8A4C4] bg-gradient-to-b from-white to-[#FFE3F2]">
               {/* Person image */}
               <img
+                key={`optionA-${currentStep}`}
                 src={questionData.optionA.image}
                 alt={questionData.optionA.title}
                 className="absolute inset-[4px] lg:inset-[6px] w-[calc(100%-8px)] lg:w-[calc(100%-12px)] h-[calc(100%-8px)] lg:h-[calc(100%-12px)] object-cover z-10 rounded-xl lg:rounded-2xl"
@@ -377,6 +391,7 @@ const Quiz = () => {
             <div className="relative w-[280px] md:w-[380px] lg:w-[476px] h-[280px] md:h-[420px] lg:h-[700px] overflow-hidden rounded-2xl lg:rounded-3xl border-[3px] lg:border-[5px] border-[#E8A4C4] bg-gradient-to-b from-white to-[#FFE3F2]">
               {/* Person image */}
               <img
+                key={`optionB-${currentStep}`}
                 src={questionData.optionB.image}
                 alt={questionData.optionB.title}
                 className="absolute inset-[4px] lg:inset-[6px] w-[calc(100%-8px)] lg:w-[calc(100%-12px)] h-[calc(100%-8px)] lg:h-[calc(100%-12px)] object-cover z-10 rounded-xl lg:rounded-2xl"
