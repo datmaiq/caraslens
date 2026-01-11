@@ -4,7 +4,7 @@ type ResultCoverProps = {
   resultCode: string;
 };
 
-// Map result codes to card images (chỉ phần card trắng, không có background)
+
 const resultImages: Record<string, string> = {
   'AAAAA': '/images/results/AAAAA.png',
   'AAAAB': '/images/results/AAAAB.png',
@@ -57,10 +57,10 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
         />
       </div>
 
-      {/* Content */}
+
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-4">
         <div className="relative w-full max-w-[500px] md:max-w-[700px] lg:max-w-[850px]">
-          {/* Title - position absolute để sát image */}
+
           <div className="absolute left-0 right-0 -top-[0.5rem] text-center z-10">
             <h1 className="font-bold text-[28px] md:text-[48px] text-[#00000] italic">
               Kết quả của bạn
@@ -69,7 +69,7 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
               * Kết quả chỉ mang tính chất tham khảo
             </p>
           </div>
-          {/* Card Image */}
+
           <img
             src={resultImagePath}
             alt={`Kết quả nhóm lens: ${resultCode}`}

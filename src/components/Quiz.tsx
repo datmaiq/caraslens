@@ -28,19 +28,33 @@ type QuestionData = {
   decorRight?: string;
 };
 
+// Quiz person images - renamed for clarity
+const quizImages = {
+  q1a: '/images/quiz/q1a.png', // Câu 1 - Option A: Trắng sáng
+  q1b: '/images/quiz/q1b.png', // Câu 1 - Option B: Nâu mật ong
+  q2a: '/images/quiz/q2a.png', // Câu 2 - Option A: Mắt mí lót
+  q2b: '/images/quiz/q2b.png', // Câu 2 - Option B: Mắt to tròn
+  q3a: '/images/quiz/q3a.png', // Câu 3 - Option A: Góc cạnh
+  q3b: '/images/quiz/q3b.png', // Câu 3 - Option B: Bầu bĩnh
+  q4a: '/images/quiz/q4a.png', // Câu 4 - Option A: Mắt đen
+  q4b: '/images/quiz/q4b.png', // Câu 4 - Option B: Mắt nâu
+  q5a: '/images/quiz/q5a.png', // Câu 5 - Option A: Nàng thơ
+  q5b: '/images/quiz/q5b.png', // Câu 5 - Option B: Quý cô
+};
+
 const questions: QuestionData[] = [
   {
     question: 'Câu 1: Bạn sở hữu tone da nào?',
     optionA: {
       title: 'A: Trắng sáng rạng rỡ',
       subtitle: 'Làn da bắt sáng, tone lạnh hoặc trung tính',
-      image: images.personA,
+      image: quizImages.q1a,
       frame: images.group7,
     },
     optionB: {
       title: 'B: Nâu mật ong khoẻ khoắn',
       subtitle: 'Làn da bánh mật, tone ấm đầy sức sống',
-      image: images.personB,
+      image: quizImages.q1b,
       frame: images.rectangle2,
     },
     decorRight: images.layer11,
@@ -50,13 +64,13 @@ const questions: QuestionData[] = [
     optionA: {
       title: 'A: Mắt mí lót / Á Đông',
       subtitle: 'Nhỏ nhắn, cuốn hút nét riêng',
-      image: images.personA,
+      image: quizImages.q2a,
       frame: images.rectangle4,
     },
     optionB: {
       title: 'B: Mắt to tròn long lanh',
       subtitle: 'Hai mí rõ, to tròn như búp bê',
-      image: images.personB,
+      image: quizImages.q2b,
       frame: images.rectangle7,
     },
     decorLeft: images.layer13,
@@ -67,13 +81,13 @@ const questions: QuestionData[] = [
     optionA: {
       title: 'A: Góc cạnh sắc sảo',
       subtitle: 'Gò má cao, xương quai hàm rõ nét',
-      image: images.personA,
+      image: quizImages.q3a,
       frame: images.rectangle8,
     },
     optionB: {
       title: 'B: Bầu bĩnh mềm mại',
       subtitle: 'Gương mặt tròn đầy, nữ tính',
-      image: images.personB,
+      image: quizImages.q3b,
       frame: images.rectangle9,
     },
     decorLeft: images.layer15,
@@ -84,13 +98,13 @@ const questions: QuestionData[] = [
     optionA: {
       title: 'A: Đen tuyền huyền bí',
       subtitle: 'Màu mắt đậm, sâu thẳm',
-      image: images.personA,
+      image: quizImages.q4a,
       frame: images.rectangle10,
     },
     optionB: {
       title: 'B: Nâu hạt dẻ ấm áp',
       subtitle: 'Màu mắt sáng, ánh nâu nhẹ',
-      image: images.personB,
+      image: quizImages.q4b,
       frame: images.rectangle11,
     },
     decorLeft: images.layer16Copy2,
@@ -101,13 +115,13 @@ const questions: QuestionData[] = [
     optionA: {
       title: 'A: Nàng thơ trong trẻo',
       subtitle: 'Makeup sương mai, tự nhiên như không',
-      image: images.personA,
+      image: quizImages.q5a,
       frame: images.rectangle12,
     },
     optionB: {
       title: 'B: Quý cô thần thái',
       subtitle: 'Makeup Tây, sắc sảo và cá tính',
-      image: images.personB,
+      image: quizImages.q5b,
       frame: images.rectangle13,
     },
     decorLeft: images.layer17,
@@ -296,63 +310,57 @@ const Quiz = () => {
         />
       )}
 
-      {/* Progress indicator */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-        {[1, 2, 3, 4, 5].map((step) => (
-          <div
-            key={step}
-            className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ${
-              step === currentStep
-                ? 'bg-pink-500 scale-125'
-                : step < currentStep
-                ? 'bg-pink-300'
-                : 'bg-gray-200'
-            }`}
-          />
-        ))}
-      </div>
-
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center pt-[80px] md:pt-[117px] px-4">
+      <div className="relative z-10 flex flex-col items-center pt-[30px] lg:pt-[40px] px-4">
+        {/* Progress indicator - line style - same width as options */}
+        <div className="w-full max-w-[320px] md:max-w-[420px] lg:max-w-[1100px] px-4 mb-6 lg:mb-10">
+          <div className="relative h-[5px] bg-white/60 rounded-full">
+            {/* Filled portion */}
+            <div 
+              className="absolute left-0 top-0 h-full bg-[#C74C8F] rounded-full transition-all duration-500"
+              style={{ width: `${(currentStep / 5) * 100}%` }}
+            />
+            {/* Circle indicator */}
+            <div 
+              className="absolute top-1/2 -translate-y-1/2 w-4 h-4 lg:w-5 lg:h-5 bg-[#C74C8F] rounded-full shadow-md transition-all duration-500"
+              style={{ left: `calc(${(currentStep / 5) * 100}% - 8px)` }}
+            />
+          </div>
+        </div>
+
         {/* Question */}
-        <h2 className="font-semibold text-[24px] md:text-[46px] text-black tracking-wide text-center mb-8 md:mb-12">
+        <h2 className="font-semibold text-[24px] md:text-[32px] lg:text-[46px] text-black tracking-wide text-center mb-6 md:mb-8 lg:mb-12">
           {questionData.question}
         </h2>
 
-        {/* Options */}
-        <div className="flex flex-col md:flex-row gap-6 md:gap-12 w-full max-w-[1400px] justify-center items-center">
+        {/* Options - vertical on mobile/tablet, horizontal on desktop (lg:1024px+) */}
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 w-full max-w-[1100px] justify-center items-center lg:items-start mx-auto">
           {/* Option A */}
           <button
             onClick={() => handleSelectAnswer('A')}
-            className={`relative group cursor-pointer transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-pink-300 rounded-3xl ${
-              quizState.answers[currentStep - 1] === 'A' ? 'ring-4 ring-pink-500 scale-[1.02]' : ''
-            }`}
+            className="relative group cursor-pointer transition-all duration-300 transform hover:scale-[1.02] rounded-3xl outline-none flex flex-col items-center"
             tabIndex={0}
             aria-label={questionData.optionA.title}
           >
-            {/* Frame background */}
-            <div className="relative w-[320px] md:w-[476px] h-[450px] md:h-[700px] overflow-hidden rounded-3xl">
-              <img
-                src={questionData.optionA.frame}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            {/* Frame + Person image */}
+            <div className="relative w-[280px] md:w-[380px] lg:w-[476px] h-[280px] md:h-[420px] lg:h-[700px] overflow-hidden rounded-2xl lg:rounded-3xl border-[3px] lg:border-[5px] border-[#E8A4C4] bg-gradient-to-b from-white to-[#FFE3F2]">
+              {/* Person image */}
               <img
                 src={questionData.optionA.image}
                 alt={questionData.optionA.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-[4px] lg:inset-[6px] w-[calc(100%-8px)] lg:w-[calc(100%-12px)] h-[calc(100%-8px)] lg:h-[calc(100%-12px)] object-cover z-10 rounded-xl lg:rounded-2xl"
               />
               
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-pink-500/0 group-hover:bg-pink-500/10 transition-all duration-300" />
+              <div className="absolute inset-0 bg-pink-500/0 group-hover:bg-pink-500/10 transition-all duration-300 z-20 rounded-2xl lg:rounded-3xl" />
             </div>
 
             {/* Text */}
             <div className="text-center mt-4">
-              <h3 className="font-bold text-[20px] md:text-[38px] text-[#282828] uppercase tracking-tight">
+              <h3 className="font-bold text-[20px] md:text-[28px] lg:text-[38px] text-[#282828] uppercase tracking-tight">
                 {questionData.optionA.title}
               </h3>
-              <p className="text-[14px] md:text-[23px] text-[#282828] mt-1">
+              <p className="text-[14px] md:text-[18px] lg:text-[23px] text-[#282828] mt-1">
                 {questionData.optionA.subtitle}
               </p>
             </div>
@@ -361,35 +369,29 @@ const Quiz = () => {
           {/* Option B */}
           <button
             onClick={() => handleSelectAnswer('B')}
-            className={`relative group cursor-pointer transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-pink-300 rounded-3xl ${
-              quizState.answers[currentStep - 1] === 'B' ? 'ring-4 ring-pink-500 scale-[1.02]' : ''
-            }`}
+            className="relative group cursor-pointer transition-all duration-300 transform hover:scale-[1.02] rounded-3xl outline-none flex flex-col items-center"
             tabIndex={0}
             aria-label={questionData.optionB.title}
           >
-            {/* Frame background */}
-            <div className="relative w-[320px] md:w-[476px] h-[450px] md:h-[700px] overflow-hidden rounded-3xl">
-              <img
-                src={questionData.optionB.frame}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            {/* Frame + Person image */}
+            <div className="relative w-[280px] md:w-[380px] lg:w-[476px] h-[280px] md:h-[420px] lg:h-[700px] overflow-hidden rounded-2xl lg:rounded-3xl border-[3px] lg:border-[5px] border-[#E8A4C4] bg-gradient-to-b from-white to-[#FFE3F2]">
+              {/* Person image */}
               <img
                 src={questionData.optionB.image}
                 alt={questionData.optionB.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-[4px] lg:inset-[6px] w-[calc(100%-8px)] lg:w-[calc(100%-12px)] h-[calc(100%-8px)] lg:h-[calc(100%-12px)] object-cover z-10 rounded-xl lg:rounded-2xl"
               />
               
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-pink-500/0 group-hover:bg-pink-500/10 transition-all duration-300" />
+              <div className="absolute inset-0 bg-pink-500/0 group-hover:bg-pink-500/10 transition-all duration-300 z-20 rounded-2xl lg:rounded-3xl" />
             </div>
 
             {/* Text */}
             <div className="text-center mt-4">
-              <h3 className="font-bold text-[20px] md:text-[38px] text-[#282828] uppercase tracking-tight">
+              <h3 className="font-bold text-[20px] md:text-[28px] lg:text-[38px] text-[#282828] uppercase tracking-tight">
                 {questionData.optionB.title}
               </h3>
-              <p className="text-[14px] md:text-[23px] text-[#282828] mt-1">
+              <p className="text-[14px] md:text-[18px] lg:text-[23px] text-[#282828] mt-1">
                 {questionData.optionB.subtitle}
               </p>
             </div>
