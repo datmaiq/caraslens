@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 1125 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Rectangle 4 copy" fill-rule="evenodd" clip-rule="evenodd" d="M55 0H1070C1100.38 0 1125 24.6244 1125 55.0002C1125 85.376 1100.38 110 1070 110H55C24.6244 110 0 85.376 0 55.0002C0 24.6244 24.6244 0 55 0Z" fill="url(#paint0_linear_0_50)"/>
+<defs>
+<linearGradient id="paint0_linear_0_50" x1="562.5" y1="110" x2="562.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C74C8F"/>
+<stop offset="1" stop-color="#F2A0CB"/>
+</linearGradient>
+</defs>
+</svg>

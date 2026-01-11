@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 1429.58 1225.48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="time">
+<g id="Clipping - Rectangle 1">
+<path id="Rectangle 1" fill-rule="evenodd" clip-rule="evenodd" d="M73.9436 1211.39H1426.06C1428 1211.39 1429.58 1212.97 1429.58 1214.91V1214.92C1429.58 1216.86 1428 1218.44 1426.06 1218.44H73.9436C71.999 1218.44 70.4225 1216.86 70.4225 1214.92V1214.91C70.4225 1212.97 71.999 1211.39 73.9436 1211.39Z" fill="white"/>
+<mask id="mask0_0_42" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="70" y="1211" width="1360" height="8">
+<path id="Mask - Rectangle 1" fill-rule="evenodd" clip-rule="evenodd" d="M73.9436 1211.39H1426.06C1428 1211.39 1429.58 1212.97 1429.58 1214.91V1214.92C1429.58 1216.86 1428 1218.44 1426.06 1218.44H73.9436C71.999 1218.44 70.4225 1216.86 70.4225 1214.92V1214.91C70.4225 1212.97 71.999 1211.39 73.9436 1211.39Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_42)">
+<path id="Rectangle 1 copy" fill-rule="evenodd" clip-rule="evenodd" d="M-1039.56 1204.35H305.507C309.396 1204.35 312.549 1207.5 312.549 1211.39V1211.4C312.549 1215.28 309.396 1218.44 305.507 1218.44H-1039.56C-1043.45 1218.44 -1046.61 1215.28 -1046.61 1211.4V1211.39C-1046.61 1207.5 -1043.45 1204.35 -1039.56 1204.35Z" fill="#C74C8F"/>
+</g>
+</g>
+<path id="Ellipse 1" fill-rule="evenodd" clip-rule="evenodd" d="M299.875 1201.53C306.488 1201.53 311.848 1206.89 311.848 1213.5C311.848 1220.12 306.488 1225.48 299.875 1225.48C293.262 1225.48 287.901 1220.12 287.901 1213.5C287.901 1206.89 293.262 1201.53 299.875 1201.53Z" fill="#C74C8F"/>
+</g>
+</svg>

@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 1429.58 3516.48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="time">
+<g id="Clipping - Rectangle 1">
+<path id="Rectangle 1" fill-rule="evenodd" clip-rule="evenodd" d="M73.9436 3502.39H1426.06C1428 3502.39 1429.58 3503.97 1429.58 3505.91V3505.92C1429.58 3507.86 1428 3509.44 1426.06 3509.44H73.9436C71.999 3509.44 70.4225 3507.86 70.4225 3505.92V3505.91C70.4225 3503.97 71.999 3502.39 73.9436 3502.39Z" fill="white"/>
+<mask id="mask0_0_19" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="70" y="3502" width="1360" height="8">
+<path id="Mask - Rectangle 1" fill-rule="evenodd" clip-rule="evenodd" d="M73.9436 3502.39H1426.06C1428 3502.39 1429.58 3503.97 1429.58 3505.91V3505.92C1429.58 3507.86 1428 3509.44 1426.06 3509.44H73.9436C71.999 3509.44 70.4225 3507.86 70.4225 3505.92V3505.91C70.4225 3503.97 71.999 3502.39 73.9436 3502.39Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_19)">
+<path id="Rectangle 1 copy" fill-rule="evenodd" clip-rule="evenodd" d="M-456.563 3495.35H888.507C892.396 3495.35 895.549 3498.5 895.549 3502.39V3502.39C895.549 3506.28 892.396 3509.44 888.507 3509.44H-456.563C-460.453 3509.44 -463.606 3506.28 -463.606 3502.39V3502.39C-463.606 3498.5 -460.453 3495.35 -456.563 3495.35Z" fill="#C74C8F"/>
+</g>
+</g>
+<path id="Ellipse 1" fill-rule="evenodd" clip-rule="evenodd" d="M882.875 3492.53C889.488 3492.53 894.848 3497.89 894.848 3504.5C894.848 3511.12 889.488 3516.48 882.875 3516.48C876.262 3516.48 870.901 3511.12 870.901 3504.5C870.901 3497.89 876.262 3492.53 882.875 3492.53Z" fill="#C74C8F"/>
+</g>
+</svg>
