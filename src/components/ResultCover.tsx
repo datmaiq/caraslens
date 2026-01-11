@@ -1,9 +1,9 @@
+import { useState, useEffect } from 'react';
 import { images } from '../assets/images';
 
 type ResultCoverProps = {
   resultCode: string;
 };
-
 
 const resultImages: Record<string, string> = {
   'AAAAA': '/images/results/AAAAA.png',
@@ -40,6 +40,58 @@ const resultImages: Record<string, string> = {
 
 const ResultCover = ({ resultCode }: ResultCoverProps) => {
   const resultImagePath = resultImages[resultCode] || '/output.lin.jpg';
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState(0);
+  const totalImages = 3; // layer1, layer6, result image
+
+  // Preload images
+  useEffect(() => {
+    setIsLoading(true);
+    setLoadedImages(0);
+
+    const imagesToLoad = [images.layer1, images.layer6, resultImagePath];
+    
+    imagesToLoad.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        setLoadedImages((prev) => {
+          const newCount = prev + 1;
+          if (newCount >= totalImages) {
+            setIsLoading(false);
+          }
+          return newCount;
+        });
+      };
+      img.onerror = () => {
+        setLoadedImages((prev) => {
+          const newCount = prev + 1;
+          if (newCount >= totalImages) {
+            setIsLoading(false);
+          }
+          return newCount;
+        });
+      };
+    });
+  }, [resultImagePath]);
+
+  // Loading screen
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-gradient-to-b from-[#FDF2F7] to-[#F5D0E0] flex flex-col items-center justify-center z-50">
+        <div className="relative">
+          {/* Animated spinner */}
+          <div className="w-16 h-16 border-4 border-pink-200 border-t-pink-500 rounded-full animate-spin" />
+        </div>
+        <p className="mt-4 text-[#C74C8F] font-semibold text-lg animate-pulse">
+          Đang tải kết quả...
+        </p>
+        <p className="mt-2 text-gray-500 text-sm">
+          {Math.round((loadedImages / totalImages) * 100)}%
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
@@ -57,12 +109,10 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
         />
       </div>
 
-
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-4">
         <div className="relative w-full max-w-[500px] md:max-w-[700px] lg:max-w-[850px]">
-
           <div className="absolute left-0 right-0 -top-[0.5rem] text-center z-10">
-            <h1 className="font-bold text-[28px] md:text-[48px] text-[#00000] italic">
+            <h1 className="font-bold text-[28px] md:text-[48px] text-[#000000] italic">
               Kết quả của bạn
             </h1>
             <p className="text-[12px] md:text-[16px] text-gray-500 italic">
