@@ -247,7 +247,7 @@ const Quiz = () => {
             {/* Email Input */}
             <div className="mb-8">
               <label className="block font-semibold text-[18px] md:text-[22px] text-black mb-2">
-                Email để nhận voucher *
+                Email
               </label>
               <div className="relative">
                 <img
