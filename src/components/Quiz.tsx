@@ -259,9 +259,9 @@ const Quiz = () => {
                   type="email"
                   value={quizState.email}
                   onChange={(e) => setQuizState({ ...quizState, email: e.target.value })}
-                  placeholder="Nhập Email để nhận voucher"
+                  placeholder="Nhập Email của bạn"
                   className="relative w-full h-[74px] px-8 text-[18px] md:text-[22px] bg-transparent rounded-full focus:outline-none focus:border-pink-400 placeholder:text-gray-300"
-                  aria-label="Nhập email để nhận voucher"
+                  aria-label="Nhập Email của bạn"
                 />
               </div>
             </div>
