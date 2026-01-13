@@ -131,7 +131,10 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
           />
 
           {/* Social Media Icons */}
-          <div className="flex items-center justify-center gap-6 mt-6 ml-12">
+          <p className="text-center text-[#C74C8F] font-semibold text-xl md:text-2xl mt-6 ml-12">
+            Click để nhận tư vấn và ưu đãi từ Caras
+          </p>
+          <div className="flex items-center justify-center gap-6 mt-3 ml-12">
             {/* Facebook */}
             <a
               href="https://www.facebook.com/CARASlens"
