@@ -244,7 +244,6 @@ const Quiz = () => {
               </div>
             </div>
 
-            {/* Email Input */}
             <div className="mb-8">
               <label className="block font-semibold text-[18px] md:text-[22px] text-black mb-2">
                 Email
@@ -266,7 +265,7 @@ const Quiz = () => {
               </div>
             </div>
 
-            {/* Start Button */}
+
             <button
               onClick={handleStartQuiz}
               disabled={!quizState.name.trim() || !quizState.email.trim()}
@@ -283,7 +282,7 @@ const Quiz = () => {
     );
   }
 
-  // Result Page (Step 6)
+
   if (currentStep === 6) {
     return <ResultCover resultCode={getResultCode()} />;
   }

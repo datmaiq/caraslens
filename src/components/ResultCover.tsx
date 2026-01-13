@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { images } from '../assets/images';
+import { SiFacebook, SiShopee, SiTiktok } from 'react-icons/si';
 
 type ResultCoverProps = {
   resultCode: string;
@@ -128,6 +129,45 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
               (e.target as HTMLImageElement).src = '/output.lin.jpg';
             }}
           />
+
+          {/* Social Media Icons */}
+          <div className="flex items-center justify-center gap-6 mt-6 ml-12">
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/CARASlens"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook CARAS Lens"
+              tabIndex={0}
+              className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+            >
+              <SiFacebook className="w-6 h-6 text-white" />
+            </a>
+
+            {/* Shopee */}
+            <a
+              href="https://s.shopee.vn/2B8aQMLxdt"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Shopee CARAS Lens"
+              tabIndex={0}
+              className="w-12 h-12 bg-[#EE4D2D] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+            >
+              <SiShopee className="w-6 h-6 text-white" />
+            </a>
+
+            {/* TikTok */}
+            <a
+              href="https://www.tiktok.com/@caras.eyes?_r=1&_t=ZS-931lJPzEtFA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok CARAS Lens"
+              tabIndex={0}
+              className="w-12 h-12 bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+            >
+              <SiTiktok className="w-6 h-6 text-white" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
