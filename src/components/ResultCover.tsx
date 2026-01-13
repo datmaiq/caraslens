@@ -110,7 +110,7 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
         />
       </div>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-4">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-4">
         <div className="relative w-full max-w-[500px] md:max-w-[700px] lg:max-w-[850px]">
           <div className="absolute left-0 right-0 -top-[0.5rem] text-center z-10">
             <h1 className="font-bold text-[28px] md:text-[48px] text-[#000000] italic">
@@ -129,48 +129,48 @@ const ResultCover = ({ resultCode }: ResultCoverProps) => {
               (e.target as HTMLImageElement).src = '/output.lin.jpg';
             }}
           />
+        </div>
 
-          {/* Social Media Icons */}
-          <p className="text-center text-[#C74C8F] font-semibold text-xl md:text-2xl mt-6 ml-12">
-            Click để nhận tư vấn và ưu đãi từ Caras
-          </p>
-          <div className="flex items-center justify-center gap-6 mt-3 ml-12">
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/CARASlens"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook CARAS Lens"
-              tabIndex={0}
-              className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
-            >
-              <SiFacebook className="w-6 h-6 text-white" />
-            </a>
+        {/* Social Media Icons - Outside max-w container */}
+        <p className="text-center text-[#C74C8F] font-medium text-xl md:text-[35px] mt-6">
+          Click để nhận tư vấn và ưu đãi từ Carase
+        </p>
+        <div className="flex items-center justify-center gap-6 mt-3">
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/CARASlens"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook CARAS Lens"
+            tabIndex={0}
+            className="w-10 h-10 md:w-14 md:h-14 bg-[#1877F2] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+          >
+            <SiFacebook className="w-6 h-6 text-white" />
+          </a>
 
-            {/* Shopee */}
-            <a
-              href="https://s.shopee.vn/2B8aQMLxdt"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Shopee CARAS Lens"
-              tabIndex={0}
-              className="w-12 h-12 bg-[#EE4D2D] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
-            >
-              <SiShopee className="w-6 h-6 text-white" />
-            </a>
+          {/* Shopee */}
+          <a
+            href="https://s.shopee.vn/2B8aQMLxdt"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Shopee CARAS Lens"
+            tabIndex={0}
+            className="w-10 h-10 md:w-14 md:h-14 bg-[#EE4D2D] rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+          >
+            <SiShopee className="w-6 h-6 text-white" />
+          </a>
 
-            {/* TikTok */}
-            <a
-              href="https://www.tiktok.com/@caras.eyes?_r=1&_t=ZS-931lJPzEtFA"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok CARAS Lens"
-              tabIndex={0}
-              className="w-12 h-12 bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
-            >
-              <SiTiktok className="w-6 h-6 text-white" />
-            </a>
-          </div>
+          {/* TikTok */}
+          <a
+            href="https://www.tiktok.com/@caras.eyes?_r=1&_t=ZS-931lJPzEtFA"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok CARAS Lens"
+            tabIndex={0}
+            className="w-10 h-10 md:w-14 md:h-14 bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
+          >
+            <SiTiktok className="w-6 h-6 text-white" />
+          </a>
         </div>
       </div>
     </div>
