@@ -26,8 +26,6 @@ export const images = {
   rectangle3: "/images/rectangle3.svg",
   rectangle4: "/images/rectangle4.svg",
   rectangle4Copy: "/images/rectangle4Copy.svg",
-  rectangle5: "/images/rectangle5.svg",
-  rectangle6: "/images/rectangle6.svg",
   rectangle7: "/images/rectangle7.svg",
   rectangle8: "/images/rectangle8.svg",
   rectangle9: "/images/rectangle9.svg",
@@ -36,22 +34,6 @@ export const images = {
   rectangle12: "/images/rectangle12.svg",
   rectangle13: "/images/rectangle13.svg",
   
-  // Layer copies (person images with different crops)
-  layer1Copy: "/images/layer1Copy.svg",
-  layer1Copy1: "/images/layer1Copy1.png",
-  layer1Copy2: "/images/layer1Copy2.png",
-  layer1Copy3: "/images/layer1Copy3.png",
-  layer1Copy4: "/images/layer1Copy4.svg",
-  layer1Copy5: "/images/layer1Copy5.png",
-  layer1Copy6: "/images/layer1Copy6.svg",
-  layer1Copy7: "/images/layer1Copy7.png",
-  layer1Copy8: "/images/layer1Copy8.svg",
-  layer1Copy9: "/images/layer1Copy9.png",
-  layer1Copy10: "/images/layer1Copy10.svg",
-  layer1Copy11: "/images/layer1Copy11.png",
-  layer1Copy12: "/images/layer1Copy12.svg",
-  layer1Copy13: "/images/layer1Copy13.png",
-  layer1Copy14: "/images/layer1Copy14.png",
   
   // Decorative layers
   layer4: "/images/layer4.png",

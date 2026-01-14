@@ -227,42 +227,28 @@ const Quiz = () => {
               <label className="block font-semibold text-[18px] md:text-[22px] text-black mb-2">
                 Tên của bạn *
               </label>
-              <div className="relative">
-                <img
-                  src={images.rectangle5}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-fill pointer-events-none"
-                />
-                <input
-                  type="text"
-                  value={quizState.name}
-                  onChange={(e) => setQuizState({ ...quizState, name: e.target.value })}
-                  placeholder="Nhập tên của bạn"
-                  className="relative w-full h-[74px] px-8 text-[18px] md:text-[22px] bg-transparent rounded-full focus:outline-none focus:border-pink-400 placeholder:text-gray-300"
-                  aria-label="Nhập tên của bạn"
-                />
-              </div>
+              <input
+                type="text"
+                value={quizState.name}
+                onChange={(e) => setQuizState({ ...quizState, name: e.target.value })}
+                placeholder="Nhập tên của bạn"
+                className="w-full h-[74px] px-8 text-[18px] md:text-[22px] bg-white border-2 border-[#D4D4D4] rounded-[16px] focus:outline-none focus:border-pink-400 placeholder:text-gray-300 transition-colors duration-200"
+                aria-label="Nhập tên của bạn"
+              />
             </div>
 
             <div className="mb-8">
               <label className="block font-semibold text-[18px] md:text-[22px] text-black mb-2">
                 Email
               </label>
-              <div className="relative">
-                <img
-                  src={images.rectangle6}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-fill pointer-events-none"
-                />
-                <input
-                  type="email"
-                  value={quizState.email}
-                  onChange={(e) => setQuizState({ ...quizState, email: e.target.value })}
-                  placeholder="Nhập Email của bạn"
-                  className="relative w-full h-[74px] px-8 text-[18px] md:text-[22px] bg-transparent rounded-full focus:outline-none focus:border-pink-400 placeholder:text-gray-300"
-                  aria-label="Nhập Email của bạn"
-                />
-              </div>
+              <input
+                type="email"
+                value={quizState.email}
+                onChange={(e) => setQuizState({ ...quizState, email: e.target.value })}
+                placeholder="Nhập Email của bạn"
+                className="w-full h-[74px] px-8 text-[18px] md:text-[22px] bg-white border-2 border-[#D4D4D4] rounded-[16px] focus:outline-none focus:border-pink-400 placeholder:text-gray-300 transition-colors duration-200"
+                aria-label="Nhập Email của bạn"
+              />
             </div>
 
 
